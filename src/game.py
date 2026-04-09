@@ -37,7 +37,7 @@ def pobierz_wybor(nazwa_gracza: str) -> str:
         if odpowiedz in ("1", "2", "3"):
             wyczysc_ekran()  # czyścimy ekran po wyborze
             print(f"✅ {nazwa_gracza} wybrał(a). Teraz kolej na drugiego gracza!")
-        return WYBORY[int(odpowiedz) - 1]
+            return WYBORY[int(odpowiedz) - 1]
 
         print("Zły wybór! Wpisz 1, 2 lub 3.")
 
