@@ -10,6 +10,10 @@ KTO_BIJE = {
     "papier": "kamień"
 }
 
+def wyczysc_ekran():
+    """Czyści terminal - gracz 1 nie zobaczy wyboru gracza 2."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def wyznacz_zwyciezce(wybor1: str, wybor2: str) -> str:
     """Porównuje dwa wybory i zwraca wynik: gracz1, gracz2 lub remis."""
@@ -31,7 +35,9 @@ def pobierz_wybor(nazwa_gracza: str) -> str:
         odpowiedz = input("Twój wybór (1/2/3): ").strip()
 
         if odpowiedz in ("1", "2", "3"):
-            return WYBORY[int(odpowiedz) - 1]
+            wyczysc_ekran()  # czyścimy ekran po wyborze
+            print(f"✅ {nazwa_gracza} wybrał(a). Teraz kolej na drugiego gracza!")
+        return WYBORY[int(odpowiedz) - 1]
 
         print("Zły wybór! Wpisz 1, 2 lub 3.")
 
