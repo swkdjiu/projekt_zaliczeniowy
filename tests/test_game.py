@@ -1,5 +1,6 @@
 from src.game import wyznacz_zwyciezce, WYBORY
 
+print("TEST STARTED")
 
 def test_remis():
     assert wyznacz_zwyciezce("kamień", "kamień") == "remis"
